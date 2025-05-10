@@ -1,0 +1,719 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --MinColor: #eee;
+  --NavColor: black;
+  --ColorLinks: #eee;
+  --colorCard: white;
+  --fonts: 'Cairo', 'Rubik', sans-serif;
+  --Shadow: 0 0 8px #6766666b;
+}
+
+body {
+  background-color: var(--MinColor);
+  font-family: var(--fonts);
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--ColorLinks);
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+  width: 94%;
+}
+
+/* -----Start Global Rules---- */
+@media (min-width:768px) {
+  .container {
+    /* width: 750px; */
+  }
+}
+
+@media (min-width:992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width:1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* Start Components */
+nav {
+  display: flex;
+  width: 100%;
+  height: 69px;
+  background-color: var(--NavColor);
+  color: #ffffff;
+  box-shadow: 0px 0px 11px #000000b8;
+  position: fixed;
+  top: 0;
+  z-index: 1000000000;
+}
+
+nav .icon {}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .container .icon {
+  width: 112px;
+      display: flex;
+      justify-content: space-around;
+      font-size: 21px;
+      align-items: center;
+}
+
+i {
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+nav .container .icon i:hover {
+  color: red;
+}
+
+nav .container .links {
+  /* width: 40%; */
+  z-index: 100000;
+}
+
+nav .container ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width:880px) {
+  nav .container .links {
+    display: flex !important;
+  }
+}
+
+@media (max-width:880px) {
+  nav .container .links {
+    position: absolute;
+    top: 440%;
+    background: #040404;
+    left: 50%;
+    width: 551px;
+    height: 452px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    display: none;
+  }
+
+  nav .container ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
+nav .container ul li {
+  margin: 0 14px;
+  display: block;
+  position: relative;
+}
+
+nav .container ul li a {
+  width: 95px;
+  height: 23px;
+  display: block;
+  transition: 0.5s;
+  text-align: center;
+}
+
+@media (max-width:880px) {
+  nav .container ul li a {
+    width: 386px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+nav .container ul li::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: white;
+  transition: 0.5s;
+  opacity: 0;
+  top: -100%;
+}
+
+nav .container ul li::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: 0.5s;
+  opacity: 0;
+  top: 190%;
+}
+
+nav .container ul li:hover::before {
+  top: -27%;
+  opacity: 1;
+}
+
+nav .container ul li:hover::after {
+  top: 122%;
+  opacity: 1;
+}
+
+nav .container ul li a:hover {
+  color: red;
+  background-color: white;
+}
+
+nav .container .logo img {
+  width: 80px;
+}
+
+.socialMedia {
+  background: white;
+  width: 46px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid #00000038;
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+  box-shadow: 0 0 10px #00000066;
+  text-align: center;
+  z-index: 1000;
+  position: fixed;
+
+}
+
+.socialMedia i {
+  font-size: 30px;
+  transition: 0.5s;
+  cursor: pointer;
+  color: black;
+  border-top: 1px solid #00000047;
+  border-bottom: 1px solid #00000047;
+  padding: 5px 0;
+}
+
+.socialMedia i:hover {
+  margin-left: 13px;
+  font-size: 44px;
+  color: red;
+}
+
+/* ---------start News -------- */
+.BodyContant {
+  margin-top: 30px;
+  margin-top: 100px;
+}
+
+/* -- ----------------------------------------start BasicNews -------------------------------------------------- */
+.BasicNews {
+  flex: 2;
+}
+
+.BasicAndSub-News {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.BasicAndSub-News .container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+@media (max-width:648px) {
+  .BasicAndSub-News .container {
+    flex-direction: column;
+  }
+}
+
+.BasicNews .NewsCard img {
+  width: 100%;
+}
+
+.BasicAndSub-News .BasicNews .NewsCard h5 {
+  background: black;
+  text-align: center;
+  font-size: 20px;
+  padding: 6px;
+}
+
+/* Start Exclusive News */
+.ExclusiveNews {
+  padding: 14px 0;
+}
+
+.ExclusiveNews ul {
+  text-align: end;
+}
+
+.ExclusiveNews ul li {
+  margin: 3px 0;
+  position: relative;
+  background: #b4b4b4;
+  padding: 14px;
+}
+
+.ExclusiveNews ul li::before {
+  content: '';
+  background: #e91e63;
+  width: 8px;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0;
+}
+
+.ExclusiveNews ul li::after {
+  content: '';
+  background: #e91e63;
+  width: 8px;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 0;
+}
+
+/* End Exclusive News */
+/* Start Sub-News */
+.Sub-News {
+  flex: 1;
+
+  margin-right: 30px;
+}
+
+@media (max-width: 648px ) {
+  .Sub-News {
+    margin: auto;
+  }
+}
+
+
+.Sub-News .NewsCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.Sub-News .NewsCard img {
+  width: 100%;
+}
+
+.Sub-News .NewsCard h5 {
+  margin: 16px 0;
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+  color: black;
+}
+
+/* -----------End SubNews  */
+/* -----Start News Egypt --------  */
+.NewsEgypt .container {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+
+}
+
+.container .title {
+  position: relative;
+
+  margin: 20px 0;
+
+}
+
+.container .title i {
+  position: absolute;
+  left: -30px;
+  top: 29%;
+  font-size: 35px;
+  color: #e91e63;
+  transform: rotate(-43deg);
+
+}
+
+.container .title .logo {
+  width: 75px;
+  position: absolute;
+  top: 79%;
+  right: 30px;
+}
+
+.container .title::before {
+  content: '';
+  position: absolute;
+  width: 7%;
+  height: 63%;
+  background: #e91e63;
+  right: 0;
+  top: 17px;
+}
+
+.NewsEgypt .NewsCardEgypt {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.NewsEgypt .NewsCardEgypt a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  width: 336px;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
+.NewsEgypt .NewsCardEgypt img {
+  width: 100%;
+  margin: 11px 0;
+}
+
+.NewsEgypt .NewsCardEgypt h5 {
+  color: black;
+  text-align: center;
+    line-height: 2;
+}
+
+/* -- -------------Start Sec News Img  ---
+------------- */
+.NewsImg .title {
+  margin-top: 0;
+  width: 180px;
+}
+
+.NewsImg .container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.NewsImg .gallery-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  width: 100%;
+  padding: 20px;
+}
+
+@media (max-width: 600px ) {
+.NewsImg .gallery-container {
+    width: 100%;
+    overflow: scroll;
+}
+
+.NewsImg .gallery-item {
+width: 212px;
+}
+
+}
+.gallery-item {
+    border-radius: 14px;
+    overflow: hidden;
+
+}
+
+*************************************************
+
+.NewsImg .gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: var(--Shadow);
+}
+
+.NewsImg .gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.NewsImg .gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* -- -------------End Sec News Img  ---------------- */
+/* -----End News Egypt -------- */
+/* ------Start logIn */
+.logIn {
+  position: relative;
+  margin-bottom: 40px;
+  margin-top: 124px;
+}
+
+.logIn i {
+  color: white;
+  font-size: 91px;
+  position: absolute;
+  left: 50%;
+  top: 2%;
+  transform: translate(-50%, -50%);
+  background: black;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+.logIn .form {
+  width: 100%;
+  height: 298px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
+  @media (max-width: 648px) {
+    .logIn .form {
+      flex-direction: column;
+      justify-content: center;
+          height: 508px;
+    }
+  }
+
+.logIn .form form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logIn .form input,
+button {
+  border: none;
+  outline: none;
+  background: #ffffff;
+  padding: 7px;
+  margin-bottom: 16px;
+}
+
+.logIn .form button {
+  padding: 9px 27px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.logIn .socialMediaLogIn {
+  width: 300px;
+  height: 164px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logIn .socialMediaLogIn .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logIn .socialMediaLogIn .text h6 {
+  font-size: 23px;
+  margin-bottom: 13px;
+  color: white;
+}
+
+.logIn .socialMediaLogIn .text p {
+  font-size: 23px;
+  color: #bebebe;
+}
+
+.logIn .socialMediaLogIn .imgIcon a {
+  margin: 0 13px;
+}
+
+.logIn .socialMediaLogIn img {
+  width: 37px;
+  background-color: aliceblue;
+}
+
+/* ---------Start footer --------- */
+footer {
+  width: 100%;
+  background-color: black;
+  padding: 30px;
+}
+
+footer .callUs {
+
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+footer .callUs i {
+  font-size: 37px;
+  margin: 13px 14px;
+}
+
+footer .Email {
+  background: #222222;
+  width: 390px;
+  height: 210px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: white;
+}
+
+footer .Email h1 {
+  color: white;
+  font-size: 22px;
+}
+
+footer .Email .text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+}
+
+.inputEmail {
+  width: 86%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputEmail input {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 40px;
+  padding: 0 9px;
+  margin-bottom: 15px;
+}
+
+button {
+  width: 100%;
+  cursor: pointer;
+  background: red;
+  color: white;
+  font-weight: bold;
+}
+
+.EmailAndProgrammers {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 29px;
+  flex-direction: row-reverse;
+  position: relative;
+  align-items: center;
+}
+
+.EmailAndProgrammers span {
+  position: absolute;
+  width: 2px;
+  height: 282px;
+  background: #b2b2b2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+footer .Programmers {
+  width: 390px;
+  color: white;
+  display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+footer .Programmers .textAndIcon {
+  display: flex;
+  justify-content: space-around;
+  color: red;
+}
+
+footer .Programmers .TheNAme {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+}
+
+footer .Programmers h1 {
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  width: 309px;
+}
+
+.PropertyRights {
+  width: 100%;
+  height: 23px;
+  background: #222222;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.PropertyRights h2 {
+  font-size: 13px;
+  margin: 0 22px;
+  font-weight: 200;
+}
+
+@media (max-width:941px) {
+
+  footer .Email,
+  .EmailAndProgrammers span {
+    display: none;
+  }
+
+  .EmailAndProgrammers {
+    justify-content: center;
+  }
+}
+
+/* ---------End footer --------- */

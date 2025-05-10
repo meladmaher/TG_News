@@ -1,0 +1,45 @@
+
+/* --------------News Index html ------- */
+#MinIndex {
+    top: 93px;
+  position: absolute;
+  font-size: 28px;
+  background: black;
+  color: white;
+  padding: 7px 33px;
+  cursor: pointer;
+  z-index: 10000000000;
+
+}
+.container_NewsFile {
+
+  margin-top: 175px;
+  position: relative;
+}
+#imgNews {
+  width: 90%;
+}
+.News_NewsFile {
+  display: flex;
+flex-direction: column;
+align-items: center;
+}
+.Text_NewsFile p {
+    font-size: 115%;
+    text-align: end;
+    line-height: 2;
+}
+.img {
+
+display: flex;
+    justify-content: center;
+
+}
+
+h1 {
+
+    font-size: 135%;
+    text-align: center;
+    color: crimson;
+
+}
